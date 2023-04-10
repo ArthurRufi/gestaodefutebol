@@ -12,7 +12,7 @@ Elementos:
 
 Funcionalidades por Elementos:
 
-        Jogadores: Foto, nascimento, pontuação, top 3 jogadores com maior amigabilidade, descrição de habilidades, nota media, sistema de pontuação.
+        Jogadores: Foto, nascimento, top 3 jogadores com maior amigabilidade, descrição de habilidades, nota media, sistema de pontuação.
             {Foto: foto busto do jogador
              Nascimento: data de nascimento deve entregar a idade do jogador (adicionar sistema de aniversario para promoções)
              Top3: jogadores com maior amigabilidade para facilitar montagem de time

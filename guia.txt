@@ -9,7 +9,7 @@ Elementos:
     Evento: A peladinha como um todo.
     Partida: Partida composta por 2 times e quantidade x de jogadores.
     Fila: Composta por todos os presentes, organizar a fila para entrar em campo.
-    
+
 Funcionalidades por Elementos:
 
         Jogadores: Foto, nascimento, pontuação, top 3 jogadores com maior amigabilidade, descrição de habilidades, nota media, sistema de pontuação.
@@ -50,3 +50,12 @@ Funcionalidades por Elementos:
             pontuação: sistema de pontos que relacione com dificuldade, amigabilidade, sequencia, pontuação do cabeça.
 
         } 
+
+
+
+
+
+'''APAGADO NO FUTORO'''
+GUIA DE DESENVOLVIMENTO:
+    
+    Iniciar o desenvolvimento por jogadores, times, amigabilidade.

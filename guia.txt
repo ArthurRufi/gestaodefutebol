@@ -1,0 +1,40 @@
+INTRO: Sistema de gestão de "peladinhas", o que sabemos sobre organização de peladinhas: montagem de times por rodadas
+com jogadores que estão na espera(jogadores aleatorios sem times predefinidos não é obrigatorio), jogam dois times um contra o outro, nesses times sai o perdedor do confronto
+abrindo espaço para os players que estão na espera (geralmente todos os jogadores do time perdedor são enviados para a espera).
+
+Elementos:
+    Jogadores: Cada jogador tem sua propria historia, pontos, amigabilidade com outros jogadores, habilidades e informações pessoais.
+    Times: Criado por um jogador especifico, contem quantidade inderteminada de jogadores (determinar sempre que iniciar o evento).
+    Amigabilidade: sistema de amigabilidade deve ser escalavel, a cada conquista ele soma pontos de amigabilidade com companheiros de time.
+    Evento: A peladinha como um todo.
+    Partida: Partida composta por 2 times e quantidade x de jogadores.
+Funcionalidades por Elementos:
+
+        Jogadores: Foto, nascimento, pontuação, top 3 jogadores com maior amigabilidade, descrição de habilidades, nota media, sistema de pontuação.
+            {Foto: foto busto do jogador
+             Nascimento: data de nascimento deve entregar a idade do jogador (adicionar sistema de aniversario para promoções)
+             Top3: jogadores com maior amigabilidade para facilitar montagem de time
+             habilidades: ataque, defesa, passe, velocidade, inteligencia, visão de jogo, resistencia, drible.
+             nota media: nota media que é entregue pelos companheiros de time
+             pontuação: vitorias e outras decisões ainda à serem escolhidas pelo cliente (ENTREGAR ISSO ATÉ O COMMIT 10)
+
+            }
+        
+        Times: quantidade de jogadores, jogadores participantes, nivel de amigabilidade, nota media do time, habilidades.
+            {quantidade de jogadores: deve ser decidido no inicio do evento e vai ser um padrão até o fim do evento
+             participantes: cada time deve ser preenchidos pela quantidade de jogadores predefinida, caso não seja completo (null)
+             nota: soma a nota dos participantes e divide por 2 (pode ser aumentada essa nota pela amigabilidade (DEFINIR BREVE!!!))
+             habilidades: composto por Sincronia, Ataque, Defesa, velocidade e tecnica.
+            }
+        
+        Amigabilidade: DEFINIR O SISTEMA COMPLETO ANTES DE CRIAR JOGADOR:
+        {
+
+        }
+
+        Evento: Evento completo composto por partida, times, jogadores e a maioria dos elementos.
+        {
+
+        }
+
+        Partida: Times, jogadores, amigabilidades, dificuldade, 

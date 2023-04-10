@@ -8,6 +8,8 @@ Elementos:
     Amigabilidade: sistema de amigabilidade deve ser escalavel, a cada conquista ele soma pontos de amigabilidade com companheiros de time.
     Evento: A peladinha como um todo.
     Partida: Partida composta por 2 times e quantidade x de jogadores.
+    Fila: Composta por todos os presentes, organizar a fila para entrar em campo.
+    
 Funcionalidades por Elementos:
 
         Jogadores: Foto, nascimento, pontuação, top 3 jogadores com maior amigabilidade, descrição de habilidades, nota media, sistema de pontuação.
@@ -16,25 +18,35 @@ Funcionalidades por Elementos:
              Top3: jogadores com maior amigabilidade para facilitar montagem de time
              habilidades: ataque, defesa, passe, velocidade, inteligencia, visão de jogo, resistencia, drible.
              nota media: nota media que é entregue pelos companheiros de time
-             pontuação: vitorias e outras decisões ainda à serem escolhidas pelo cliente (ENTREGAR ISSO ATÉ O COMMIT 10)
+             pontuação: vitorias, pontos como cabeça e outras decisões ainda à serem escolhidas pelo cliente (ENTREGAR ISSO ATÉ O COMMIT 10)
 
             }
         
-        Times: quantidade de jogadores, jogadores participantes, nivel de amigabilidade, nota media do time, habilidades.
+        Times: quantidade de jogadores, jogadores participantes, nivel de amigabilidade, nota media do time, habilidades, cabeça, sequencia.
             {quantidade de jogadores: deve ser decidido no inicio do evento e vai ser um padrão até o fim do evento
              participantes: cada time deve ser preenchidos pela quantidade de jogadores predefinida, caso não seja completo (null)
              nota: soma a nota dos participantes e divide por 2 (pode ser aumentada essa nota pela amigabilidade (DEFINIR BREVE!!!))
              habilidades: composto por Sincronia, Ataque, Defesa, velocidade e tecnica.
+             cabeça: criador do time.
+             Sequencia: sequencia de vitorias para aumentar pontuação
             }
         
         Amigabilidade: DEFINIR O SISTEMA COMPLETO ANTES DE CRIAR JOGADOR:
         {
-
+            NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
         }
 
         Evento: Evento completo composto por partida, times, jogadores e a maioria dos elementos.
         {
-
+            NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
         }
 
-        Partida: Times, jogadores, amigabilidades, dificuldade, 
+        Partida: Times, jogadores, amigabilidades, dificuldade, pontuação.
+        {
+            Times: informações do time.
+            jogadores: informações dos jogadores
+            amigabilidade: calcular a amigabilidade de cada time e comparar
+            dificuldade: comparar notas dos times e ver o nivel de dificuldade para ambos.
+            pontuação: sistema de pontos que relacione com dificuldade, amigabilidade, sequencia, pontuação do cabeça.
+
+        } 

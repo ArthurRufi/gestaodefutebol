@@ -1,0 +1,15 @@
+¹Classes por Modulos
+
+    ¹Jogadores
+        [
+            Jogador {
+                
+            }
+            Pontos {
+
+            }
+            Habilidades {
+
+            }
+        ]
+    ²

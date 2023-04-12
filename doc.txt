@@ -3,13 +3,13 @@
     ¹Jogadores
         [
             Jogador {
-                
+
             }
             Pontos {
 
             }
             Habilidades {
-
+                
             }
         ]
     ²

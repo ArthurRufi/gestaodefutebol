@@ -2,9 +2,10 @@ from jogadores import Jogador
 
 
 class Habilidades(Jogador):
-    def __init__(self, jogador, conjunto):
+  
+    def __init__(self, nome, nascimento, notas, iden, conjunto):
+        Jogador.__init__(self,nome, nascimento, notas, iden) 
         
-        self._jogador = jogador
         self._conjunto = conjunto
 
         
@@ -24,9 +25,9 @@ class Habilidades(Jogador):
 
     def criarhabilidades(self):
         ''' Caso o jogador não exista criar as habilidades, sempre chamado com a função criarjogador da classe Jogador, necessario receber id do jogador'''
-        
-        pass
-
+        nome = self.nome
+        print(f'nome do arquivo {nome}')
+    
 
     def modificarhabilidades():
         

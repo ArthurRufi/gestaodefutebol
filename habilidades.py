@@ -1,5 +1,5 @@
 from jogadores import Jogador
-
+import os
 
 class Habilidades(Jogador):
   
@@ -25,9 +25,14 @@ class Habilidades(Jogador):
 
     def criarhabilidades(self):
         ''' Caso o jogador não exista criar as habilidades, sempre chamado com a função criarjogador da classe Jogador, necessario receber id do jogador'''
-        nome = self.nome
-        print(f'nome do arquivo {nome}')
-    
+        n = self._id
+
+        if  os.path.isfile(f'D:\PythonArquivos\pyarchives\gestaofutebol\\{n}.txt'):
+            print("Jogador Já tem habilidades existentes!")
+
+        else:
+            print("Criar habilidades")    
+
 
     def modificarhabilidades():
         

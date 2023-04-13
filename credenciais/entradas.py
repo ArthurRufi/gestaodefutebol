@@ -4,7 +4,8 @@ class Entradas:
         self.enome = ""
         self.eid = ""
         self.nascimento = ""
-    
+        #COLOCAR METODO PARA CRIAR O ID AUTOMATICO
+        
         
     def nome_entrada(self):
 
@@ -58,6 +59,7 @@ class Entradas:
         
     def set_nascimento(self):
         
+        #ARRUMAR ESSA PORCARIA
         day = input("Insira o DIA de nascimento: ")
         mounth = input("Insira o mês de nascimento: ")
         years = input("Insira o Ano de nascimento: ")
@@ -93,6 +95,7 @@ class Entradas:
         
         
     def get_nascimento(self):
+        
         if self.nascimento == "":
             return False
         else:
@@ -100,6 +103,7 @@ class Entradas:
 
 
     def charmar(self):
+        
         self.nome_entrada()
         self.eid_entrada()
         self.set_nascimento()

@@ -4,6 +4,7 @@ from credenciais.entradas import Entradas
 from credenciais.pesquisa import Pesquisa
 import os
 
+'''INICIAR A MODULAR O MAIN'''
 e = Entradas()
 
 e.charmar()

@@ -4,7 +4,7 @@ import os
 class Habilidades(Jogador):
   
     def __init__(self, nome, nascimento, notas, iden, conjunto):
-        Jogador.__init__(self,nome, nascimento, notas, iden) 
+        Jogador.__init__(self,  nome, nascimento, notas, iden) 
         
         self._conjunto = conjunto
 

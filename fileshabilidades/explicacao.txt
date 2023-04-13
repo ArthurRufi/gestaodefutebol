@@ -1,1 +1,2 @@
 Cada arquivo deve ser nomeado com o ID do jogador, a ordem de linhas deve ser a seguinte, ID|NOME|DATA|NOTA|CONJUNTO 
+COLOCAR MODULO Habilidades Dentro da pasta filehabilidades

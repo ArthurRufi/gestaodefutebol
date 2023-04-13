@@ -1,6 +1,6 @@
 from jogadores import *
-from habilidades import Habilidades
-from entradas import Entradas
+from fileshabilidades.habilidades import Habilidades
+from credenciais.entradas import Entradas
 import os
 
 e = Entradas()

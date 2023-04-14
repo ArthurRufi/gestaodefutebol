@@ -23,9 +23,10 @@ class Entradas:
                 na = input("Insira um nome Valido: ")
             else:
                 while True:
-                    name = input("Insira o nome do jogador: ")
-                    if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{name}.txt'):
-                        print("Crie jogador")
+                    
+                    if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{na}.txt'):
+                        print("AVISO DE DESENVOLVIMENTO: add funcionalidade Criar jogador")
+                        break
                     else:
                         break
                 break

@@ -9,7 +9,7 @@ import os
 while True:
     print("Bem vindo ao nosso sistema")
     print ("AVISO!!!\n SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL")
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo*\n(2)Consultar jogador\n(3)Cadastrar Jogador*\n(4)Sair\nOpção: "))
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo*\n(2)Consultar jogador\n(3)Cadastrar Jogador\n(4)Sair\nOpção: "))
     
     limpar = Pesquisa()
     limpar.limpar()
@@ -28,34 +28,38 @@ while True:
         print("Consultar jogador:")
         '''Pode fazer a mesma função de iniciar jogo, só que nessa você consegue editar as informações do jogador'''
         entry = Pesquisa()
-        op = entry.pesquisa_por_id()
-        op
+        
+        limpar.limpar()
 
-        if op == False:
-            
-            limpar.limpar()
+        if not entry.p():      
             print("Jogador não encontrado!\nEscolha uma opção!\n")
-            op2 = int(input("(1)Cadastrar Jogador\n(2)sair"))
-            limpar.limpar()
-            
-            if op2 == 1:
-                limpar
-                entradacadastro = Entradas()
-                entradacadastro.charmar()
-                limpar
-                j = Jogador(entradacadastro.nome_saida(), entradacadastro.get_nascimento(), 'NULL', entradacadastro.id_saida())
-                print(j.nome)
-                print(j._nascimento)
-                print(j._notas)
-                print(j._id)
+        
+        else:
+            '''entregar informações do jogador'''
+            pass
 
         fim = input("Pressione enter para continuar")
         os.system("cls")
         break       
         
+
     elif enter == 3:
         print("Basicamente cadastrar um jogador")
         '''Cadastrar jogador e apagar também'''
+        op2 = int(input("(1)Cadastrar Jogador\n(2)sair"))
+        limpar.limpar()
+            
+        if op2 == 1:
+            limpar
+            entradacadastro = Entradas()
+            entradacadastro.charmar()
+           
+            j = Jogador(entradacadastro.nome_saida(), entradacadastro.get_nascimento(), 'NULL', entradacadastro.id_saida())
+            print(f'{j.nome}, {j._nascimento}, {j._notas}, {j._id}')
+
+            j.cadastro()
+            limpar.limpar()
+
         pass
     else:
         break

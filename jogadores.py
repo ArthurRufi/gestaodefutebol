@@ -12,14 +12,15 @@ class Jogador:
     
     def cadastro(self):
        
-        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}'):
-            print("Jogador já existe")
+        if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt'):
+            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt', 'a') as player:
+                lista =[f'Nome: {self.nome}\n', f'Nascimento: {self._nascimento}\n', f'Notas: {self._notas}\n', f'ID: {self._id}\n']
+                player.writelines(lista)
+            
         else:
-            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}', '+r') as player:
-                pass
-        with open():
-            pass
-        pass
+            print("Jogador já existe")
+       
+        
 
 class Pontos(Jogador):
     

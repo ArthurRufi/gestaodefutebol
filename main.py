@@ -8,7 +8,7 @@ import os
 
 while True:
     print("Bem vindo ao nosso sistema")
-    print ("AVISO!!!\n SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL")
+    print ("AVISO!!!\n!!!SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL!!!")
     enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo*\n(2)Consultar jogador\n(3)Cadastrar Jogador\n(4)Sair\nOpção: "))
     
     limpar = Pesquisa()
@@ -46,7 +46,7 @@ while True:
     elif enter == 3:
         print("Basicamente cadastrar um jogador")
         '''Cadastrar jogador e apagar também'''
-        op2 = int(input("(1)Cadastrar Jogador\n(2)sair"))
+        op2 = int(input("(1)Cadastrar Jogador\n(2)Apagar jogador"))
         limpar.limpar()
             
         if op2 == 1:
@@ -59,10 +59,22 @@ while True:
 
             j.cadastro()
             limpar.limpar()
+        
+        elif op2 ==2:
+            
+            apagarcadastro = Entradas()
+            apagarcadastro.charmar()
+            pesquisarcadastro = Pesquisa()
+            pesquisarcadastro.pesquisa_por_id = apagarcadastro.id_saida()
+            j = Jogador(0, 0, 0, apagarcadastro.id_saida())
 
-        pass
-    else:
+            j.apagar()
+            limpar.limpar()
+
+    elif enter == 4:
         break
+
+    limpar.limpar()
 '''
 e = Entradas()
 

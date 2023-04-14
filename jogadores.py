@@ -19,7 +19,19 @@ class Jogador:
             
         else:
             print("Jogador já existe")
-       
+
+    
+    def apagar(self):
+        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt'):
+            
+            confirmacao = int(input("Tem certeza?\n(1) Sim\n(2)NÃO"))
+            if confirmacao == 1:
+                os.remove(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt')  
+            else:
+                print("NAO APAGADO")
+        
+        else:
+            print("Arquivo inesistente")
         
 
 class Pontos(Jogador):

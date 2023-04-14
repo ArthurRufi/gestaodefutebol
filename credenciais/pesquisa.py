@@ -5,9 +5,9 @@ class Pesquisa:
 
     def __init__(self):
         
-        self.pesquisanome = str
-        self.pesquisaid = str
-        self.pesquisadata = str
+        self.pesquisanome = ''
+        self.pesquisaid = ''
+        self.pesquisadata = ''
         
         pass
     
@@ -21,15 +21,18 @@ class Pesquisa:
         
         l = input("Insira o id do cidadão: ")
         self.pesquisaid = l
+        print(l)
 
-        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{self.pesquisaid}.txt'):
-            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{self.pesquisaid}.txt', 'r') as arquivo:
+        '''Organizar para entregar informações ultima linha deve ser o id para pesquisa de habilidades'''
+        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self.pesquisaid}.txt'):
+            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self.pesquisaid}.txt', 'r') as arquivo:
                 for linha in arquivo:
                     print(linha.strip())
-
+            return True
         else:
             print("Jogador não registrado")
-        
+            return False
+
 
 
     def pesquisa_por_data():

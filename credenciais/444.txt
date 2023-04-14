@@ -1,0 +1,2 @@
+Ataque 12
+Defesa 89

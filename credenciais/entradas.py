@@ -1,3 +1,6 @@
+import os
+
+
 
 class Entradas:
     def __init__(self):
@@ -13,10 +16,18 @@ class Entradas:
         
 
         '''tentar inserir um list compreension no para realizar toda a tarefa'''
+        '''Fazer o nome sempre ficar letra maiscula'''
+        '''Fazer que se o jogador não existir exigir que o usuario cadastre o jogador'''
         while True:
             if not na.isalpha():
                 na = input("Insira um nome Valido: ")
             else:
+                while True:
+                    name = input("Insira o nome do jogador: ")
+                    if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{name}.txt'):
+                        print("Crie jogador")
+                    else:
+                        break
                 break
         
         self.enome = na

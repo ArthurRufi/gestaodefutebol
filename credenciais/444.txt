@@ -1,2 +1,2 @@
-Ataque 12
-Defesa 89
+Nome Arthur
+ID 444

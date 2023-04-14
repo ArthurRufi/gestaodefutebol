@@ -31,6 +31,7 @@ class Habilidades(Jogador):
             print("Jogador Já tem habilidades existentes!")
 
         else:
+            '''Melhorar esse laço, crie um laço FOR'''
             while True:
                 file = open(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{self._id}.txt', "a")
                 atack = input("Insira o ataque: ")

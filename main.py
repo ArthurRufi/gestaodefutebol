@@ -8,43 +8,50 @@ import os
 
 while True:
     print("Bem vindo ao nosso sistema")
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo\n(2)Consultar jogador\n(3)Cadastrar Jogador\n(4)Sair\nOpção: "))
+    print ("AVISO!!!\n SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL")
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo*\n(2)Consultar jogador\n(3)Cadastrar Jogador*\n(4)Sair\nOpção: "))
+    
+    limpar = Pesquisa()
+    limpar.limpar()
 
     if enter == 1:
-        print("Neceesario iniciar jogo")
+        print("Nessesario iniciar jogo")
         '''Iniciar jogo chamando times, necessario informar a quantidade de jogadores e após começar a definir times
            nesse meio é necessario que sempre que for procurar um jogador pelo nome consiga a opção de consultar o jogador antes de adicionar o 
            jogador e após escolher se deseja adicionar ou não
-
         '''
         pass
-    elif enter == 2 :
-        os.system('cls')
 
-        print("Consultar jogador!")
+    elif enter == 2 :
+       
+        limpar.limpar()
+        print("Consultar jogador:")
         '''Pode fazer a mesma função de iniciar jogo, só que nessa você consegue editar as informações do jogador'''
         entry = Pesquisa()
-        entry.pesquisa_por_id()
-        
+        op = entry.pesquisa_por_id()
+        op
 
-        if entry.pesquisa_por_id == False:
+        if op == False:
+            
+            limpar.limpar()
+            print("Jogador não encontrado!\nEscolha uma opção!\n")
             op2 = int(input("(1)Cadastrar Jogador\n(2)sair"))
-
+            limpar.limpar()
+            
             if op2 == 1:
-                cadastro = Entradas()
-                cadastro.charmar()
-            else:
-                break
+                limpar
+                entradacadastro = Entradas()
+                entradacadastro.charmar()
+                limpar
+                j = Jogador(entradacadastro.nome_saida(), entradacadastro.get_nascimento(), 'NULL', entradacadastro.id_saida())
+                print(j.nome)
+                print(j._nascimento)
+                print(j._notas)
+                print(j._id)
 
-          
-        print("Precione enter para continuar")
-        fim = input("")
+        fim = input("Pressione enter para continuar")
         os.system("cls")
-        break      
-                    
-
-        
-        
+        break       
         
     elif enter == 3:
         print("Basicamente cadastrar um jogador")

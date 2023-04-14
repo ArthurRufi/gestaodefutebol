@@ -19,12 +19,13 @@ class Pesquisa:
 
     def pesquisa_por_id(self):
         
-        l = input("Insira o id do cidadão: ")
+        l = input("Insira o id do jogador: ")
         self.pesquisaid = l
         print(l)
 
         '''Organizar para entregar informações ultima linha deve ser o id para pesquisa de habilidades'''
         if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self.pesquisaid}.txt'):
+            os.system('cls')
             with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self.pesquisaid}.txt', 'r') as arquivo:
                 for linha in arquivo:
                     print(linha.strip())
@@ -37,3 +38,9 @@ class Pesquisa:
 
     def pesquisa_por_data():
         pass
+
+
+
+    def limpar(self):
+        clear = os.system('cls')
+        return clear

@@ -1,3 +1,5 @@
+import os
+
 class Jogador:
     
     def __init__(self, nome, nascimento, notas, iden):
@@ -8,8 +10,15 @@ class Jogador:
         '''não precisar receber notas e iden, receber somente o iden(identificador) e usar funções para entregar informações'''
 
     
-    def cadastro():
-        #Caso não existá o jogador usar esse metodo.
+    def cadastro(self):
+       
+        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}'):
+            print("Jogador já existe")
+        else:
+            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}', '+r') as player:
+                pass
+        with open():
+            pass
         pass
 
 class Pontos(Jogador):

@@ -1,9 +1,5 @@
-from jogadores import *
-from fileshabilidades.habilidades import Habilidades
-from credenciais.entradas import Entradas
-from credenciais.pesquisa import Pesquisa
-from eventopath.evento import Evento
-from eventopath.times import Times
+from credenciais.sistema import *
+
 import os
 import time
 '''INICIAR A MODULAR O MAIN'''
@@ -15,14 +11,16 @@ print("Bem vindo ao nosso sistema")
 #criar sistema de verificação por credenciais para entrar no proximo while
 
 while True:
+    
     print("Bem vindo ao nosso sistema")
     print ("AVISO!!!\n!!!SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL!!!")
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO*\n(2)(BLOCK)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
     
     #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
     #INICIAR EVENTO E INICIAR JOGO DEVE SER ALGO SEPARADADO
-    system = Pesquisa()
+    system = Sistema()
     system.limpar() 
+    system.cor()
     #system mais em breve deverá ser criado uma nova classe para funcionalidades do sistema como library os e etc...
 
     if enter == 1:
@@ -63,9 +61,11 @@ while True:
             entradacadastro.charmar()
            
             j = Jogador(entradacadastro.nome_saida(), entradacadastro.get_nascimento(), 'NULL', entradacadastro.id_saida())
-            print(f'{j.nome}, {j._nascimento}, {j._notas}, {j._id}')
-
-            j.cadastro()
+        
+            
+            if j.cadastro():
+                print(f'{j.nome}, {j._nascimento}, {j._notas}, {j._id}')
+            time.sleep(3)
             system.limpar()
         
         elif op2 ==2:

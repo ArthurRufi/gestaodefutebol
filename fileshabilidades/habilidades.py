@@ -27,28 +27,32 @@ class Habilidades(Jogador):
         ''' Caso o jogador não exista criar as habilidades, sempre chamado com a função criarjogador da classe Jogador, necessario receber id do jogador'''
         self._id
 
-        if  os.path.isfile(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt'):
-            print("Jogador Já tem habilidades existentes!")
+        print("!!!INDISPONIVEL!!!")
+        #adicionar as habilidades direto no arquivo
+        
+        if not os.path.isfile(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt'):
+            print("Jogador não existe")
 
         else:
-            '''Melhorar esse laço, crie um laço FOR'''
+            # Melhorar esse laço, crie um laço FOR
             while True:
                 file = open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt', "a")
                 atack = input("Insira o ataque: ")
                 file.write(f'Ataque {atack}')
                 file.close()
                 break
-
+        
     def modificarhabilidades(self):
         
+        print("!!!INDISPONIVEL!!!")
         
-        
+        '''
         op = int(input("(1) excluir?"))
         if op == 1:
             if os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt'):
                 os.remove(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt')
             else:
                 print("Arquivo não existe")
-            
+        ''' 
         '''Receber Habilidades e alterar no arquivo'''
         pass

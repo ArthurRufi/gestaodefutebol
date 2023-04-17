@@ -25,9 +25,9 @@ class Pesquisa:
         print(p)
 
         '''Organizar para entregar informações ultima linha deve ser o id para pesquisa de habilidades'''
-        if os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self.pesquisaid}.txt'):
+        if os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self.pesquisaid}.txt'):
             os.system('cls')
-            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self.pesquisaid}.txt', 'r') as arquivo:
+            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self.pesquisaid}.txt', 'r') as arquivo:
                 for linha in arquivo:
                     print(linha.strip())
             return True
@@ -36,12 +36,5 @@ class Pesquisa:
             return False
 
 
-
     def pesquisa_por_data(self):
         pass
-
-
-
-    def limpar(self):
-        clear = os.system('cls')
-        return clear

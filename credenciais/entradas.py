@@ -74,15 +74,6 @@ class Entradas:
         day = input("Insira o DIA de nascimento: ")
         mounth = input("Insira o mês de nascimento: ")
         years = input("Insira o Ano de nascimento: ")
-
-        while True:
-            if len(day) == 2 and len(mounth) == 2 and len(years):
-                break
-            else:
-                print("Insira Novamente as credenciais: ")
-                day = input("Insira o DIA de nascimento: ")
-                mounth = input("Insira o mês de nascimento: ")
-                years = input("Insira o Ano de nascimento: ")
         
         while True:
             if not day.isdigit() or int(day) > 31 or int(day) <= 0:

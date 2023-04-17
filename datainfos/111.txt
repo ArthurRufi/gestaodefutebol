@@ -1,0 +1,4 @@
+Nome: arthur
+Nascimento: 12/12/1999
+Notas: NULL
+ID: 111

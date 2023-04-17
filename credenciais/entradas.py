@@ -24,7 +24,7 @@ class Entradas:
             else:
                 while True:
                     #Isso não funciona sem nem oq faz, mas deve-se arrumar
-                    if not os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\fileshabilidades\\{na}.txt'):
+                    if not os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{na}.txt'):
                         break
                     else:
                         break

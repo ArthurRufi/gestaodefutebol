@@ -1,4 +1,0 @@
-Nome: mateus
-Nascimento: 12/11/1999
-Notas: NULL
-ID: 333

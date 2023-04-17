@@ -53,7 +53,7 @@ class Evento:
         #pegar ids registrados e repassar nomes dos jogadores
         
         for id_jogador in self.jogadores:
-            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{id_jogador}.txt', 'r') as jogador:
+            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{id_jogador}.txt', 'r') as jogador:
                 identificador = jogador.readlines()
                 nome = identificador[0].rstrip()           
             print(nome)

@@ -1,4 +1,0 @@
-Nome: lucas
-Nascimento: 12/12/1998
-Notas: NULL
-ID: 222

@@ -7,13 +7,14 @@ class Jogador:
         self._nascimento = nascimento
         self._notas= notas
         self._id = iden
+        self.cartoes = ""
         '''não precisar receber notas e iden, receber somente o iden(identificador) e usar funções para entregar informações'''
 
     
     def cadastro(self):
        
-        if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt'):
-            with open(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt', 'a') as player:
+        if not os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self._id}.txt'):
+            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self._id}.txt', 'a') as player:
                 lista =[f'Nome: {self.nome}\n', f'Nascimento: {self._nascimento}\n', f'Notas: {self._notas}\n', f'ID: {self._id}\n']
                 player.writelines(lista)
             
@@ -22,11 +23,23 @@ class Jogador:
 
     
     def apagar(self):
-        if os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt'):
+
+        '''Pesquisa se o jogador existe, se existir ele retorna as informações do jogador e pergunta se deseja apagar as informações'''
+        if os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self._id}.txt'):
             
-            confirmacao = int(input("Tem certeza?\n(1) Sim\n(2)NÃO"))
+            file = open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self._id}.txt', 'r', )
+            for linha in file:
+                print(linha.rstrip())
+                
+                #melhorar esse close()
+
+            confirmacao = int(input("Tem certeza?\n(1) Sim\n(2)NÃO: "))
             if confirmacao == 1:
-                os.remove(f'D:\PythonArquivos\pyarchives\gestaofutebol\credenciais\\{self._id}.txt')  
+                file.close()
+                os.remove(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\credenciais\\{self._id}.txt')  
+                print("JOGADOR DELETADO")
+                input("Precione ENTER para sair!")
+
             else:
                 print("NAO APAGADO")
         
@@ -34,15 +47,5 @@ class Jogador:
             print("Arquivo inesistente")
         
 
-class Pontos(Jogador):
-    
-    def __init__(self, tops, cabecapoints, pontosproprios):
-        Jogador.__init__(self)
-        self._toptree = tops
-        self._cabeca = cabecapoints
-        self._pontos = pontosproprios
-        self._idenfication =  self.nome
-        
 
-        print (self._cabeca)
     

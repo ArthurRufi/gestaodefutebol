@@ -2,55 +2,51 @@ from jogadores import *
 from fileshabilidades.habilidades import Habilidades
 from credenciais.entradas import Entradas
 from credenciais.pesquisa import Pesquisa
+from evento.evento import Evento
+from evento.times import Times
 import os
-
+import time
 '''INICIAR A MODULAR O MAIN'''
+
+
+'''COLOCAR ARQUIVOS EM MODELOS CSV, FICA MELHOR DE REGISTRAR E PESQUISAR'''
+
+print("Bem vindo ao nosso sistema")
+#criar sistema de verificação por credenciais para entrar no proximo while
 
 while True:
     print("Bem vindo ao nosso sistema")
     print ("AVISO!!!\n!!!SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL!!!")
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar jogo*\n(2)Consultar jogador\n(3)Cadastrar Jogador\n(4)Sair\nOpção: "))
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO*\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
     
-    limpar = Pesquisa()
-    limpar.limpar()
+    #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
+    #INICIAR EVENTO E INICIAR JOGO DEVE SER ALGO SEPARADADO
+    system = Pesquisa()
+    system.limpar() 
+    #system mais em breve deverá ser criado uma nova classe para funcionalidades do sistema como library os e etc...
 
     if enter == 1:
+        
+        initevento = Evento
         print("Nessesario iniciar jogo")
+        '''iNICIAR EVENTO, Deve cadastrar todos o jogadores presentes, definir quantidade de jogadores por time'''
         '''Iniciar jogo chamando times, necessario informar a quantidade de jogadores e após começar a definir times
            nesse meio é necessario que sempre que for procurar um jogador pelo nome consiga a opção de consultar o jogador antes de adicionar o 
            jogador e após escolher se deseja adicionar ou não
         '''
-        pass
+        break
 
-    elif enter == 2 :
-       
-        limpar.limpar()
-        print("Consultar jogador:")
-        '''Pode fazer a mesma função de iniciar jogo, só que nessa você consegue editar as informações do jogador'''
-        entry = Pesquisa()
-        
-        limpar.limpar()
+    #UNIR CONSULTAR DE JOGADOR E GESTÃO DE JOGADORES NA MESMA PAGINA
+    
+    elif enter == 2:
 
-        if not entry.p():      
-            print("Jogador não encontrado!\nEscolha uma opção!\n")
-        
-        else:
-            '''entregar informações do jogador'''
-            pass
-
-        fim = input("Pressione enter para continuar")
-        os.system("cls")
-        break       
-        
-
-    elif enter == 3:
-        print("Basicamente cadastrar um jogador")
+        print("GESTÃO DE JOGADORES")
         '''Cadastrar jogador e apagar também'''
-        op2 = int(input("(1)Cadastrar Jogador\n(2)Apagar jogador"))
-        limpar.limpar()
+        op2 = int(input("(1)Cadastrar Jogador\n(2)Apagar jogador\n(3)Consultar Jogador\nOpção: "))
+        system.limpar()
             
         if op2 == 1:
-            limpar
+            #criar pasta exclusiva para jogadores
             entradacadastro = Entradas()
             entradacadastro.charmar()
            
@@ -58,23 +54,56 @@ while True:
             print(f'{j.nome}, {j._nascimento}, {j._notas}, {j._id}')
 
             j.cadastro()
-            limpar.limpar()
+            system.limpar()
         
         elif op2 ==2:
-            
-            apagarcadastro = Entradas()
-            apagarcadastro.charmar()
+            '''CRIAR FUNCIONALIDADE PARA PESQUISAR NOME DO JOGADOR E DATA DE NASCIMENTO CASO NÃO LEMBRAR DO ID'''
+            e = Entradas()
+            e.eid_entrada()
+            system.limpar()
             pesquisarcadastro = Pesquisa()
-            pesquisarcadastro.pesquisa_por_id = apagarcadastro.id_saida()
-            j = Jogador(0, 0, 0, apagarcadastro.id_saida())
+            
+            
+            j = Jogador(0, 0, 0, e.id_saida())
 
             j.apagar()
-            limpar.limpar()
+            time.sleep(3)
+            system.limpar()
+
+        elif op2 ==3 :
+             
+            system.limpar()
+            print("Consultar jogador:")
+            '''Pode fazer a mesma função de iniciar jogo, só que nessa você consegue editar as informações do jogador'''
+            entradas = Entradas()
+            entradas.eid_entrada()
+            pesquisa = Pesquisa()
+            
+            system.limpar()
+
+            while True:
+
+                p = pesquisa.pesquisa_por_id(entradas.id_saida())
+                
+                if not p:      
+                    op = input("Deseja continuar pequisa? (S)")
+                    if op == 'S':
+                        continue
+                    else: 
+                        break
+                    
+                else:
+                    '''entregar informações do jogador'''
+                    break
+
+            fim = input("Pressione enter para continuar")
+            os.system("cls")
+
 
     elif enter == 4:
         break
 
-    limpar.limpar()
+    system.limpar()
 '''
 e = Entradas()
 

@@ -19,7 +19,8 @@ Funcionalidades por Elementos:
              habilidades: ataque, defesa, passe, velocidade, inteligencia, visão de jogo, resistencia, drible.
              nota media: nota media que é entregue pelos companheiros de time
              pontuação: vitorias, pontos como cabeça e outras decisões ainda à serem escolhidas pelo cliente (ENTREGAR ISSO ATÉ O COMMIT 10)
-
+            
+            ADICIONAR SISTEMA DE BANIMENTO
             }
         
         Times: quantidade de jogadores, jogadores participantes, nivel de amigabilidade, nota media do time, habilidades, cabeça, sequencia.

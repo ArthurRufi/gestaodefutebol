@@ -7,14 +7,14 @@ class Entradas:
         self.enome = ""
         self.eid = ""
         self.nascimento = ""
+        self.notas = ""
         #COLOCAR METODO PARA CRIAR O ID AUTOMATICO
-        
+        #CRIAR SISTEMA PARA NOTAS
         
     def nome_entrada(self):
 
         na = input("Insira o nome do jogador: ")
         
-
         '''tentar inserir um list compreension no para realizar toda a tarefa'''
         '''Fazer o nome sempre ficar letra maiscula'''
         '''Fazer que se o jogador não existir exigir que o usuario cadastre o jogador'''
@@ -23,9 +23,8 @@ class Entradas:
                 na = input("Insira um nome Valido: ")
             else:
                 while True:
-                    
-                    if not os.path.exists(f'D:\PythonArquivos\pyarchives\gestaofutebol\\fileshabilidades\\{na}.txt'):
-                        print("AVISO DE DESENVOLVIMENTO: add funcionalidade Criar jogador")
+                    #Isso não funciona sem nem oq faz, mas deve-se arrumar
+                    if not os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\fileshabilidades\\{na}.txt'):
                         break
                     else:
                         break
@@ -113,6 +112,15 @@ class Entradas:
         else:
             return self.nascimento
 
+
+    def set_notas(self):
+        #vai receber notas e tratar as mesmas.
+        pass
+
+    
+    def get_notas(self):
+        #retornar as notas como nota ou boolean
+        pass
 
     def charmar(self):
         

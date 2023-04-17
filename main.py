@@ -2,8 +2,8 @@ from jogadores import *
 from fileshabilidades.habilidades import Habilidades
 from credenciais.entradas import Entradas
 from credenciais.pesquisa import Pesquisa
-from evento.evento import Evento
-from evento.times import Times
+from eventopath.evento import Evento
+from eventopath.times import Times
 import os
 import time
 '''INICIAR A MODULAR O MAIN'''
@@ -17,7 +17,7 @@ print("Bem vindo ao nosso sistema")
 while True:
     print("Bem vindo ao nosso sistema")
     print ("AVISO!!!\n!!!SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL!!!")
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO*\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO*\n(2)(BLOCK)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
     
     #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
     #INICIAR EVENTO E INICIAR JOGO DEVE SER ALGO SEPARADADO
@@ -27,8 +27,20 @@ while True:
 
     if enter == 1:
         
-        initevento = Evento
-        print("Nessesario iniciar jogo")
+        initevento = Evento()
+        print("Evento Iniciado!\nInsira a quantidade de jogadores por time")
+        
+        if initevento.quantidade_por_time():
+            print("Quantidade definidas")
+        else:
+            for goleiro in initevento.goleirossele:
+                print(goleiro)
+
+        print("Insira o id de todos os jogadores: ")
+        initevento.id_jogadores_evento()
+        #USAR CLASSE ENTRADAS PARA REGISTRAR CONFERIR JOGADORES NÃO EXISTENTES
+        initevento.nome_dos_jogadores()
+        
         '''iNICIAR EVENTO, Deve cadastrar todos o jogadores presentes, definir quantidade de jogadores por time'''
         '''Iniciar jogo chamando times, necessario informar a quantidade de jogadores e após começar a definir times
            nesse meio é necessario que sempre que for procurar um jogador pelo nome consiga a opção de consultar o jogador antes de adicionar o 
@@ -101,6 +113,9 @@ while True:
 
 
     elif enter == 4:
+        break
+
+    else: 
         break
 
     system.limpar()

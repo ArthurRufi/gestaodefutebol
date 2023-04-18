@@ -1,27 +1,21 @@
 from PySimpleGUI  import PySimpleGUI as sg
 
+class Tema:
+   
+    def __init__(self):
+        sg.theme('Dark Blue')
+        layout = [
+            [sg.Text("Insira o nome do jogador"), sg.Input(key='name')],
+            [sg.Button('Obter'), sg.Button('Cancelar')],
+            
+        ]
+        janela = sg.Window("Sistema", layout)
+        while True:
+            evento, valores = janela.read() # type: ignore
+            if evento ==sg.WIN_CLOSED or evento == 'Cancelar':
+                janela.close()
+                break
+                
 
-sg.theme('Reddit')
-layout = [
-    [sg.Text('Usuario'), sg.Input(key= 'usuario')],
-    [sg.Text('Senha'), sg.Input(key='senha', password_char='*')],
-    [sg.Checkbox('Salvar? ')],
-    [sg.Button('Entrar')]
-]
 
-#janela
-
-janela = sg.Window('Tela de login', layout)
-
-#eventos
-
-while True:
-    
-    eventos, valores = janela.read() # type: ignore
-    
-    if eventos == sg.WIN_CLOSED:
-        break
-    if eventos == 'Entrar':
-        if valores['usuario'] == 'arthur' and valores ['senha'] == '12345':
-            print('Bem vindo')
-
+t= Tema()

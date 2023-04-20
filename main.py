@@ -12,8 +12,6 @@ print("Bem vindo ao nosso sistema")
 
 while True:
     
-    print("Bem vindo ao nosso sistema")
-    print ("AVISO!!!\n!!!SEMPRE QUE A OPÇÃO FOR SEGUIDA DE (*) A OPÇÃO ESTÁ INDISPONIVEL!!!")
     enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
     
     #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
@@ -113,10 +111,7 @@ while True:
 
 
     elif enter == 4:
-        break
-
-    else: 
-        break
+        break   
 
     system.limpar()
 '''

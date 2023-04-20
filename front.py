@@ -5,7 +5,7 @@ class Tema:
     def __init__(self):
         sg.theme('Dark Blue')
         layout = [
-            [sg.Text("Insira o nome do jogador"), sg.Input(key='name')],
+            [sg.Text("Insira o nome do jogador")],
             [sg.Button('Obter'), sg.Button('Cancelar')],
             
         ]
@@ -16,6 +16,8 @@ class Tema:
                 janela.close()
                 break
                 
-
+    
+    def iniciar(self):
+        pass
 
 t= Tema()

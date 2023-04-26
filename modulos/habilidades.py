@@ -1,4 +1,4 @@
-from jogadores import Jogador
+from modulos.jogadores import Jogador
 import os
 
 class Habilidades(Jogador):

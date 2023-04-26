@@ -1,8 +1,8 @@
 import os
-from jogadores import *
-from fileshabilidades.habilidades import Habilidades
-from credenciais.entradas import Entradas
-from credenciais.pesquisa import Pesquisa
+from modulos.jogadores import *
+from modulos.habilidades import Habilidades
+from modulos.entradas import Entradas
+from modulos.pesquisa import Pesquisa
 from eventopath.evento import Evento
 from eventopath.times import Times
 

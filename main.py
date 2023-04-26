@@ -31,7 +31,7 @@ while True:
         else:
             for goleiro in initevento.goleirossele:
                 print(goleiro)
-
+        
         print("Insira o id de todos os jogadores: ")
         initevento.id_jogadores_evento()
         #USAR CLASSE ENTRADAS PARA REGISTRAR CONFERIR JOGADORES NÃO EXISTENTES

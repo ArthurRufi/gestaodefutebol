@@ -1,4 +1,4 @@
-from credenciais.sistema import *
+from modulos.sistema import *
 
 import os
 import time

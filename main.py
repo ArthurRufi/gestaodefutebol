@@ -2,40 +2,48 @@ from modulos.sistema import *
 
 import os
 import time
-'''INICIAR A MODULAR O MAIN'''
-
-
-'''COLOCAR ARQUIVOS EM MODELOS CSV, FICA MELHOR DE REGISTRAR E PESQUISAR'''
 
 print("Bem vindo ao nosso sistema")
-#criar sistema de verificação por credenciais para entrar no proximo while
 
 while True:
     
     enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
     
     #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
-    #INICIAR EVENTO E INICIAR JOGO DEVE SER ALGO SEPARADADO
     system = Sistema()
     system.limpar() 
     system.cor()
-    #system mais em breve deverá ser criado uma nova classe para funcionalidades do sistema como library os e etc...
+
 
     if enter == 1:
         
         initevento = Evento()
-        print("Evento Iniciado!\nInsira a quantidade de jogadores por time")
-        
-        if initevento.quantidade_por_time():
-            print("Quantidade definidas")
-        else:
-            for goleiro in initevento.goleirossele:
-                print(goleiro)
-        
+        e = Entradas()
+        p = Pesquisa()
+        condit = bool
+
+        print("Evento Iniciado!\n")
+        initevento.quantidade_do_evento()
+
         print("Insira o id de todos os jogadores: ")
-        initevento.id_jogadores_evento()
+        
+        for jogador in range(initevento.quantidadetotal):
+            e.eid_entrada()
+            if p.pesquisa_por_id(e.eid):
+                initevento.jogadores.append(e.eid)
+                condit = True
+            else: 
+                print('ID INEXISTENTE\n INSIRA UM ID EXISTENTE')
+                e.eid_entrada()
+                condit = False
+                
+
+        if condit == True:   
+            initevento.nome_dos_jogadores()
+        else:
+            print(f'Lista de jogadores digitados por id  {initevento.jogadores}')
         #USAR CLASSE ENTRADAS PARA REGISTRAR CONFERIR JOGADORES NÃO EXISTENTES
-        initevento.nome_dos_jogadores()
+        
         
         '''iNICIAR EVENTO, Deve cadastrar todos o jogadores presentes, definir quantidade de jogadores por time'''
         '''Iniciar jogo chamando times, necessario informar a quantidade de jogadores e após começar a definir times

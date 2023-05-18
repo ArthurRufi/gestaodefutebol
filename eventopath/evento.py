@@ -19,7 +19,7 @@ class Evento:
         if goleiro == 1:
             qtd = int(input("Insira a quantidade de jogadores com goleiro: "))
              
-            print (f'Quantidade de jogadores: {qtd - 1}')
+            print (f'Quantidade de jogadores: {qtd - 2}')
             self.quantidadepre = qtd
             return True
         
@@ -30,24 +30,17 @@ class Evento:
             for x in range(qtddegoleiros):
                 goleiros = input(f"Insira o nome do goleiro {x}: ")
                 self.goleirossele.append(goleiros)
-            
-            
+                  
             return False
 
 
-    def id_jogadores_evento(self):
+    def quantidade_do_evento(self):
 
         self.listadejogadores = []
         self.quantidadetotal = int(input("Insira a quantidade todal de jogadores: ")) 
-        for qtddejogador in range(self.quantidadetotal):
-            inserir = input("Insira o id do jogador: ")
-            #Inserir meio para o amostrar nome do jogador e outra referencia
-            self.listadejogadores.append(inserir)
-        
-        self.jogadores = self.listadejogadores
         
         
-
+        
     #avaliar se esses metodos devem ir para a classe Time
     def nome_dos_jogadores(self):
         #pegar ids registrados e repassar nomes dos jogadores
@@ -60,10 +53,11 @@ class Evento:
         
         if len(self.jogadores) == 0:
             print("Insira jogadores")
+            return False
 
         else:
-            for x in self.jogadores:
-                print(x)
+            return True
+        
 
     
         

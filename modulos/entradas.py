@@ -1,7 +1,6 @@
 import os
 
 
-
 class Entradas:
     def __init__(self):
         self.enome = ""
@@ -15,9 +14,6 @@ class Entradas:
 
         na = input("Insira o nome do jogador: ")
         
-        '''tentar inserir um list compreension no para realizar toda a tarefa'''
-        '''Fazer o nome sempre ficar letra maiscula'''
-        '''Fazer que se o jogador não existir exigir que o usuario cadastre o jogador'''
         while True:
             if not na.isalpha():
                 na = input("Insira um nome Valido: ")
@@ -33,12 +29,11 @@ class Entradas:
         self.enome = na
 
         return self.enome
-        
-        
+           
 
     def eid_entrada(self):
 
-        na = input("Insira o id do jogador: ")
+        na = input("Id do jogador: ")
 
         while True:
             if not na.isdigit():

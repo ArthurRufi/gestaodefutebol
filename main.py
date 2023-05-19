@@ -7,10 +7,11 @@ print("Bem vindo ao nosso sistema")
 
 while True:
     
-    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
-    
-    #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
     system = Sistema()
+    system.limpar()
+    #tratar ENTRADA DO ENTER
+    enter = int(input("Escollha uma das opções para prosseguir\n(1)Iniciar EVENTO\n(2)GESTÃO DE JOGADORES\n(3)Sair\nOpção: "))
+    #no final de cada jogo deve-se ser calculado todas as funcionalidades de notas, habilidades e etc.
     system.limpar() 
     system.cor()
 
@@ -18,24 +19,28 @@ while True:
     if enter == 1:
         
         initevento = Evento()
-        e = Entradas()
-        p = Pesquisa()
-        condit = bool
+        entradas = Entradas()
+        pesquisas = Pesquisa()
+        condit = bool # modificar nome para essa condição
 
+        #bloco de inicialização do evento
         print("Evento Iniciado!\n")
-        initevento.quantidade_do_evento()
-
-        print("Insira o id de todos os jogadores: ")
+        initevento.init_event(enter)
+        time.sleep(3)
+        system.limpar()
         
-        for jogador in range(initevento.quantidadetotal):
-            e.eid_entrada()
-            if p.pesquisa_por_id(e.eid):
-                initevento.jogadores.append(e.eid)
+        #bloco  de informações iniciais do evento
+        while len(initevento.jogadores) <= initevento.quantidadetotal:
+            entradas.eid_entrada()
+            if pesquisas.pesquisa_por_id(entradas.eid):
+                initevento.jogadores.append(entradas.eid)
                 condit = True
             else: 
                 print('ID INEXISTENTE\n INSIRA UM ID EXISTENTE')
-                e.eid_entrada()
                 condit = False
+                sair = input("Deseja sair?")
+                if sair == 's':
+                    break
                 
 
         if condit == True:   
@@ -50,9 +55,14 @@ while True:
            nesse meio é necessario que sempre que for procurar um jogador pelo nome consiga a opção de consultar o jogador antes de adicionar o 
            jogador e após escolher se deseja adicionar ou não
         '''
-        break
-
-    #UNIR CONSULTAR DE JOGADOR E GESTÃO DE JOGADORES NA MESMA PAGINA
+        system.limpar() 
+        
+        partidainiciar = int(input('Deseja Iniciar o Evento?\n S = (1) or N = (2)'))
+        if partidainiciar == 1:
+            partida = Partida
+        else: 
+            continue
+        
     
     elif enter == 2:
 
@@ -62,7 +72,8 @@ while True:
         system.limpar()
             
         if op2 == 1:
-            #criar pasta exclusiva para jogadores
+            #informações do jogador na pasta \datainfos todos definidos por id
+            #criar regra para definição de id automatica usando data de nascimento
             entradacadastro = Entradas()
             entradacadastro.charmar()
            
@@ -122,39 +133,4 @@ while True:
         break   
 
     system.limpar()
-'''
-e = Entradas()
 
-e.charmar()
-j = Jogador(e.nome_saida(), e.get_nascimento(), "91", e.id_saida())
-h = Habilidades(j.nome, j._nascimento, j._notas, j._id, "akaka")
-#h.criarhabilidades()
-
-os.system('cls')
-print(f'Nome: {h.nome}')
-print(f'ID: {h._id}')
-print(f'Nascimento: {h._nascimento}')
-
-n = int(input("Escolha uma opção:\n(1)Consultar Jogador\n(2)Habilidades"))
-
-if n == 1:
-    print(j.nome)
-
-elif n == 2:
-    h.criarhabilidades()
-
-CRIAR ARQUIVOS PARA REGISTRO DO JOGADORES E CONSULTAR ANTES DE ENTRAR
-
-h.modificarhabilidades()
-
-p = Pesquisa()
-
-p.pesquisa_por_id()
-
-
-exemplo de recebimento tratamento de erros
-if e.nome_saida() == False:
-    print("not name")
-else:
-    print("erro inesperado")
-'''

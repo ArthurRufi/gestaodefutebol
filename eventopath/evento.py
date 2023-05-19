@@ -13,13 +13,24 @@ class Evento:
         #SE HOUVER GOLEIRO PROPRIO RETORNAR TRUE SE NÃO RETORNAR FALSE PARA TRABALHAR COM ISSO NO MAIN
         #INSERIR QUANTIDADES PREDEFINIDAS PARA FACILITAR O PROCESSO
 
-        goleiro = int(input("Goleiro proprio? "))
+        while True:
+            goleiroentrada = (input("Goleiro proprio? "))
+            goleiro = int()
+
+            if goleiroentrada.isdigit():
+                goleiro = int(goleiroentrada)
+                break
+            else:
+                goleiroentrada = input('Coloque um numero valido: ')
+                goleiro = int(goleiroentrada)
+                continue
+        
         qtd = 0
         
         if goleiro == 1:
             qtd = int(input("Insira a quantidade de jogadores com goleiro: "))
              
-            print (f'Quantidade de jogadores: {qtd - 2}')
+            print (f'Quantidade de jogadores: {qtd - 1}')
             self.quantidadepre = qtd
             return True
         
@@ -34,14 +45,17 @@ class Evento:
             return False
 
 
-    def quantidade_do_evento(self):
+    def quantidade_de_jogadores_do_evento(self):
 
         self.listadejogadores = []
-        self.quantidadetotal = int(input("Insira a quantidade todal de jogadores: ")) 
+        qtd = int(input("Insira a quantidade todal de jogadores: ")) 
+        
+        if qtd <=50:
+            self.quantidadetotal = qtd
+        else:
+            print ("Quantidade indisponivel nessa versão, MAXIMO 50")
         
         
-        
-    #avaliar se esses metodos devem ir para a classe Time
     def nome_dos_jogadores(self):
         #pegar ids registrados e repassar nomes dos jogadores
         
@@ -57,7 +71,12 @@ class Evento:
 
         else:
             return True
-        
+    
 
+    def init_event(self, condition):
+
+        if condition == 1:
+            self.quantidade_de_jogadores_do_evento()
+            self.quantidade_por_time()
     
         

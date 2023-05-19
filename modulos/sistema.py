@@ -5,6 +5,7 @@ from modulos.entradas import Entradas
 from modulos.pesquisa import Pesquisa
 from eventopath.evento import Evento
 from eventopath.times import Times
+from eventopath.partida import Partida
 
 class Sistema:
     def __init__(self):
@@ -19,3 +20,7 @@ class Sistema:
     def cor(self):
         cores = os.system('color 2')
         return cores
+    
+    #função para definir tratar os numeros inseridos
+    def is_num(self):
+        pass

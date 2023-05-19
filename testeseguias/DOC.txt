@@ -1,0 +1,5 @@
+Classes:
+Files:
+ERROR:  {
+    10° ERROR !!! FUNCTION NOT ABLE: Função não está em desenvolvimento
+}

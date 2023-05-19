@@ -11,7 +11,9 @@ class Entradas:
         #CRIAR SISTEMA PARA NOTAS
         
     def nome_entrada(self):
-
+        
+        print('ERROR 10! please read DOC.txt')
+        '''
         na = input("Insira o nome do jogador: ")
         
         while True:
@@ -29,7 +31,7 @@ class Entradas:
         self.enome = na
 
         return self.enome
-           
+        '''
 
     def eid_entrada(self):
 

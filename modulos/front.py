@@ -31,19 +31,22 @@ class Tema:
 
         while True:
             event, values = janelainicio.read() # type: ignore
-            
-            if event == 'Enviar' and values ['Tjogadores'] != '':
+    
+            if event == 'Enviar' and values ['Tjogadores'] != '' and values['jogadores'] in jogadorescombo and values['goleiros'] in goleiroscombo:
                 if values ['Tjogadores'] != '':
                     if values['goleiros'] == 'Sim':
                         self.goleiro = True
                         print('sim goleiro')
+                        print (values['jogadores'])
+                        print(values['goleiros'])
                     else:
                         print('não goleiro')
+                        print (values['jogadores'])
+                        print(values['goleiros'])
                         self.goleiro = False
                 janelainicio.close()
 
-            elif event == 'Enviar' and values ['Tjogadores'] == '':
-                continue
+               
 
             elif event == 'Sair' or event == sg.WIN_CLOSED:
                 janelainicio.close()

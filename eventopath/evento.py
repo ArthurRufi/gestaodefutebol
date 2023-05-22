@@ -3,7 +3,8 @@
 class Evento:
 
     def  __init__(self):
-        self.quantidadepre = 0
+        self.quantidadepredefinidadejogadores = int()
+        self.goleirosbool = bool()
         self.jogadores = list()
         self.goleirossele = list()
         self.quantidadetotal = 0
@@ -15,27 +16,26 @@ class Evento:
         goleiro = confirmgoleiro
 
         if goleiro == True:
-            self.quantidadepre = (self.quantidadetotal / 5)
-            return self.quantidadepre
+            self.goleirosbool = True
+            return self.quantidadepredefinidadejogadores
         elif goleiro == False:
-            self.quantidadepre = (self.quantidadetotal / 4)
-            return self.quantidadepre
+            self.goleirosbool = False
+            return self.quantidadepredefinidadejogadores
         
         if goleiro == 1:
             qtd = int(input("Insira a quantidade de jogadores com goleiro: "))
              
             print (f'Quantidade de jogadores: {qtd - 1}')
-            self.quantidadepre = qtd
+            self.quantidadepredefinidadejogadores = qtd
             return True
         
         else:
             qtd = int(input("Insira a quantidade de jogadores sem goleiro: "))
-            self.quantidadepre = qtd
+            self.quantidadepredefinidadejogadores = qtd
             qtddegoleiros = int(input("Insira a quantidade de goleiros do evento: "))
             for x in range(qtddegoleiros):
                 goleiros = input(f"Insira o nome do goleiro {x}: ")
                 self.goleirossele.append(goleiros)
-                  
             return False
 
 

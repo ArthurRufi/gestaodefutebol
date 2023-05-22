@@ -10,6 +10,10 @@ while True:
 
     if mainwindow == '1':
         tema.iniciarevento()
+        initevento = Evento()
+        entradas = Entradas()
+        pesquisas = Pesquisa()
+        partida = Partida()
         
 
     elif mainwindow == '2':

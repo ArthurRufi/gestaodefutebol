@@ -8,24 +8,18 @@ class Evento:
         self.goleirossele = list()
         self.quantidadetotal = 0
 
-    def quantidade_por_time(self):
+    def quantidade_por_time(self, confirmgoleiro):
         
         #SE HOUVER GOLEIRO PROPRIO RETORNAR TRUE SE NÃO RETORNAR FALSE PARA TRABALHAR COM ISSO NO MAIN
         #INSERIR QUANTIDADES PREDEFINIDAS PARA FACILITAR O PROCESSO
+        goleiro = confirmgoleiro
 
-        while True:
-            goleiroentrada = (input("Goleiro proprio? "))
-            goleiro = int()
-
-            if goleiroentrada.isdigit():
-                goleiro = int(goleiroentrada)
-                break
-            else:
-                goleiroentrada = input('Coloque um numero valido: ')
-                goleiro = int(goleiroentrada)
-                continue
-        
-        qtd = 0
+        if goleiro == True:
+            self.quantidadepre = (self.quantidadetotal / 5)
+            return self.quantidadepre
+        elif goleiro == False:
+            self.quantidadepre = (self.quantidadetotal / 4)
+            return self.quantidadepre
         
         if goleiro == 1:
             qtd = int(input("Insira a quantidade de jogadores com goleiro: "))
@@ -73,10 +67,10 @@ class Evento:
             return True
     
 
-    def init_event(self, condition):
+    #def init_event(self, condition):
 
-        if condition == 1:
-            self.quantidade_de_jogadores_do_evento()
-            self.quantidade_por_time()
+        #if condition == 1:
+            #self.quantidade_de_jogadores_do_evento()
+            #self.quantidade_por_time()
     
         

@@ -24,7 +24,7 @@ while True:
 
         #bloco de inicialização do evento
         print("Evento Iniciado!\n")
-        initevento.init_event(enter)
+        #initevento.init_event(enter)
         time.sleep(3)
         system.limpar()
         

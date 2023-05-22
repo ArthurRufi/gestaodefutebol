@@ -1,4 +1,4 @@
-from front import Tema
+from modulos.front import Tema
 
 t = Tema()
 t.interface_pesquisa()

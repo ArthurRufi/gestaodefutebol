@@ -1,5 +1,5 @@
 from modulos.sistema import *
-from front import Tema
+from modulos.front import Tema
 
 
 

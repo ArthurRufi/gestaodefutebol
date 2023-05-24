@@ -6,7 +6,6 @@ from modulos.front import Tema
 while True:
     tema = Tema()
     mainwindow = tema.janela1()
-    print(mainwindow)
 
     if mainwindow == '1':
         tema.iniciarevento()
@@ -27,13 +26,26 @@ while True:
             #controle para caso jogador já exista ou id não correspondente
             pass
     
-    elif mainwindow == '4':
-        #ao retornar 1 é iniciado o sistema de pesquisa, ao retornar 2 é iniciado o sistema de cadastro.
+    elif mainwindow == '3':
+    
         pesquisa = tema.interface_pesquisa()
         jp = Pesquisa()
-        jp.pesquisa_por_id(tema.id)
+        jogadorpesquisa = jp.pesquisa_por_id(tema.id)
+        print(tema.id)
+        print(jogadorpesquisa)
+    
+        if jogadorpesquisa == True:
+            print(tema.id)
+            tema.caixa_de_aviso_cadastro_existente()
+            
+        else:
+            print(f'jogador {tema.id} não existe')
+            tema.jogador_nao_existe()
+            
     
     elif mainwindow == '4':
-        pass
+        break
+
+    
         
-    break
+    

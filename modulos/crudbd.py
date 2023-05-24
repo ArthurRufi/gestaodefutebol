@@ -2,12 +2,12 @@ import psycopg2
 
 
 class DB():
-    def __init__(self) -> None:
+    def __init__(self):
         self.host ='localhost'
         self.port = '5432'
         self.database = 'jogadores'
         self.user = 'arthur'
-        self.password = '86128931'
+        self.password = '86128931' 
 
     def criar_banco(self):
         
@@ -41,6 +41,22 @@ class DB():
 
         query = f'SELECT * FROM jogadores_infos WHERE id = {id_pesquisa}'
         curso.execute(query)
+        resultado = curso.fetchone()
+        conn.close()
+
+        if resultado:
+            return True
+        else:
+            return False
+        
+    def pesquisa_nome(self, nome):
+        conn = self.bancoiniciar()
+
+        curso = conn.cursor()
+        nome_pesquisa = nome
+
+        query = 'SELECT * FROM jogadores_infos WHERE nome = %s'
+        curso.execute(query, (nome_pesquisa,))
         resultado = curso.fetchone()
 
         if resultado:

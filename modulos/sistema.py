@@ -1,11 +1,12 @@
 import os
-from modulos.jogadores import *
+from modulos.jogadores import Jogador
 from modulos.habilidades import Habilidades
 from modulos.entradas import Entradas
 from modulos.pesquisa import Pesquisa
 from eventopath.evento import Evento
 from eventopath.times import Times
 from eventopath.partida import Partida
+from modulos.crudbd import DB
 
 class Sistema:
     def __init__(self):

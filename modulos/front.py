@@ -6,7 +6,7 @@ class Tema:
 
     def __init__(self):
         self.nome = ''
-        self.id = int()
+        self.id = 0
         self.nascimento = ''
         self.goleiro = bool()
         self.jogadores = int()
@@ -56,10 +56,11 @@ class Tema:
             [sg.Radio('Evento', 'g', key='Evento')],
             [sg.Radio('Gestão de jogadores', 'g', key='Gestão')],
             [sg.Radio('Pesquisa de jogador', 'g', key='Pesquisa')],
+            [sg.Radio('Finalizar', 'f', key='Final')],
             [sg.Button('Enviar'), sg.Button('Sair')],
             [sg.Image('archivesimages\\bola-2.png')]
         ]
-        self.main = sg.Window('Opções', layout=layout, finalize=True)
+        self.main = sg.Window('Opções', layout=layout, finalize=True) # type: ignore
         
         janelamain = self.main
         janelamain.maximize()
@@ -81,6 +82,10 @@ class Tema:
                     janelamain.close()
                     return '3'
                 
+                elif values ['Final'] == True:
+                    janelamain.close()
+                    return '4'
+                
             elif event == 'Sair' or event == sg.WIN_CLOSED:
                 janelamain.close()
                 break
@@ -94,26 +99,36 @@ class Tema:
 
         layout2 = [
             [sg.Text('Insira o id do jogador')],
-            [sg.Input(key='Nome2')],
-            [sg.Button('Pesquisar'), sg.Button('Sair')]
-            
+            [sg.Input(key='ID')],
+            [sg.Button('Pesquisar'), sg.Button('Sair')]   
         ]
 
         self.pesquisa = sg.Window('Pesquisa', layout=layout2, finalize=True)
-
         janelaatual = self.pesquisa
-        
-        event, values = janelaatual.read() # type: ignore
 
-        if event == 'Pesquisar':
-            self.id = values['Nome2']
-            return values
-        elif event == 'Sair' or event == sg.WIN_CLOSED:
-            janelaatual.close()
-        
-        janelaatual.close()
 
+        event, values = janelaatual.read() # type: ignore  
+        valor = int(values['ID'])
+
+        self.id = valor
+        while True:
                 
+            if event == 'Pesquisar' and type(valor) == int():
+                if type(valor) == int():
+                    self.id = valor
+                    print('achou')
+                    return values
+                else: 
+                    print('valor deve ser inteiro')
+                    break
+
+            elif event == 'Sair' or event == sg.WIN_CLOSED:
+                janelaatual.close()
+            else: 
+                janelaatual.close()
+                
+
+            break   
 
     def cadastrar(self):
         sg.theme('LightYellow')
@@ -158,4 +173,48 @@ class Tema:
 
 
     def caixa_de_aviso_cadastro_existente(self):
-        pass
+        sg.theme('LightBrown8')
+        layout5 = [
+            [sg.Text('Jogador já existe!!!')],
+            [sg.Button('OK', button_color='Blue', key='OK')],
+            [],
+            [],
+            [],
+            ]
+
+        self.caixa_de_aviso_cadastro = sg.Window('Aviso cadastr', layout=layout5, finalize=True)
+        caixa = self.caixa_de_aviso_cadastro
+
+
+        while True:
+            event, values = caixa.read() #type: ignore
+
+            if event == 'OK':
+                caixa.close()
+                break
+
+
+    def jogador_nao_existe(self):
+        sg.theme('LightBrown8')
+        layout6 = [
+            [sg.Text('Jogador não existe!!!')],
+            [sg.Button('OK', button_color='Blue',key= 'OK')],
+            [],
+            [],
+            [],
+            ]
+
+        self.caixa_de_aviso_nao_existe = sg.Window('Aviso cadastro', layout=layout6, finalize=True)
+        caixa2 = self.caixa_de_aviso_nao_existe
+
+
+        while True:
+            event, values = caixa2.read() #type: ignore
+
+            if event == 'OK':
+                caixa2.close()
+                break
+
+    
+                
+        

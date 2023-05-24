@@ -9,17 +9,18 @@ class Tema:
         self.id = int()
         self.nascimento = ''
         self.goleiro = bool()
-
+        self.jogadores = int()
 
     def iniciarevento(self):
         sg.theme('LightYellow')
         jogadorescombo = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
         goleiroscombo = ['Sim', 'Não']
+        jogadorestotais = [i for i in range(1, 51)]
         layout4 = [
             [sg.Text('Vamos Iniciar o evento', justification= 'Center')],
             [sg.Text('Insira a quantidade total de jogadores')],
-            [sg.Input(key='Tjogadores')],
-            [sg.Text('Qaunto jogadores por time?', size=(20,1)), sg.Combo(jogadorescombo, default_value='Escolha', key='jogadores', size=(20,20))],
+            [sg.Text('Quantos jogadores totais?', size=(20,1)), sg.Combo(jogadorestotais, default_value='Escolha', key='jogadorestotais', size=(20,20))],
+            [sg.Text('Quantos jogadores por time?', size=(20,1)), sg.Combo(jogadorescombo, default_value='Escolha', key='jogadores', size=(20,20))],
             [sg.Text('Essa partida possui goleiro?', size=(20,1)), sg.Combo(goleiroscombo, default_value='Escolha', key='goleiros', size=(20,20))],
             [sg.Button('Sair'), sg.Button('Enviar')],
             
@@ -32,21 +33,15 @@ class Tema:
         while True:
             event, values = janelainicio.read() # type: ignore
     
-            if event == 'Enviar' and values ['Tjogadores'] != '' and values['jogadores'] in jogadorescombo and values['goleiros'] in goleiroscombo:
-                if values ['Tjogadores'] != '':
+            if event == 'Enviar' and values ['jogadorestotais'] in jogadorestotais and values['jogadores'] in jogadorescombo and values['goleiros'] in goleiroscombo:
+                if values ['jogadorestotais'] != '':
+                    self.jogadores = values['jogadorestotais']
                     if values['goleiros'] == 'Sim':
                         self.goleiro = True
-                        print('sim goleiro')
-                        print (values['jogadores'])
-                        print(values['goleiros'])
+                        self.jogadores = values['jogadorestotais']
                     else:
-                        print('não goleiro')
-                        print (values['jogadores'])
-                        print(values['goleiros'])
                         self.goleiro = False
                 janelainicio.close()
-
-               
 
             elif event == 'Sair' or event == sg.WIN_CLOSED:
                 janelainicio.close()
@@ -156,6 +151,10 @@ class Tema:
                 break
             
             janelamain.close()
+
+
+    def gestao(self):
+        pass
 
 
     def caixa_de_aviso_cadastro_existente(self):

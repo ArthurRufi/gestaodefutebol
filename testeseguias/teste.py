@@ -1,4 +1,5 @@
-from modulos.front import Tema
+from modulos.crudbd import DB
 
-t = Tema()
-t.interface_pesquisa()
+d = DB()
+
+d.pesquisa_id('111')

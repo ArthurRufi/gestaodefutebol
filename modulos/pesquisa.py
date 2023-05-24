@@ -1,6 +1,6 @@
-import os
+from modulos.crudbd import DB
 
-class Pesquisa:
+class Pesquisa(DB):
     
 
     def __init__(self):
@@ -9,9 +9,7 @@ class Pesquisa:
         self.pesquisaid = ''
         self.pesquisadata = ''
         
-        pass
-    
-    #O IDEAL DA PESQUISA É QUE ELA SEJA REGISTRADA POR ID
+        
 
     def pesquisa_por_nome(self):
         '''Iniciar sistema de pesquisa por nome'''
@@ -21,20 +19,18 @@ class Pesquisa:
 
     def pesquisa_por_id(self, p):
         
-        self.pesquisaid = p
-        print(p)
-
-        '''Organizar para entregar informações ultima linha deve ser o id para pesquisa de habilidades'''
-        if os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self.pesquisaid}.txt'):
-            os.system('cls')
-            with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self.pesquisaid}.txt', 'r') as arquivo:
-                for linha in arquivo:
-                    print(linha.strip())
-            return True
+        id_verify = self.pesquisa_id(p)
+        if id_verify:
+            print('existe')
         else:
-            print("Jogador não registrado")
-            return False
+            print ('nao')
 
 
     def pesquisa_por_data(self):
         pass
+
+
+p = Pesquisa()
+p.pesquisa_id('111')
+
+    

@@ -1,6 +1,9 @@
 import os
+import psycopg2
+from modulos.pesquisa import Pesquisa
 
-class Jogador:
+
+class Jogador():
     
     def __init__(self, nome, nascimento, notas, iden):
         self.nome =  nome
@@ -11,8 +14,8 @@ class Jogador:
         '''não precisar receber notas e iden, receber somente o iden(identificador) e usar funções para entregar informações'''
 
     
-    def cadastro(self):
-       
+    def cadastro(self, conn):
+
         if not os.path.exists(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt'):
             with open(f'D:\\PythonArquivos\\pyarchives\\gestaofutebol\\datainfos\\{self._id}.txt', 'a') as player:
                 lista =[f'Nome: {self.nome}\n', f'Nascimento: {self._nascimento}\n', f'Notas: {self._notas}\n', f'ID: {self._id}\n']
@@ -49,5 +52,6 @@ class Jogador:
             print("Arquivo inesistente")
         
 
+    
 
     
